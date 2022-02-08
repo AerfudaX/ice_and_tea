@@ -93,7 +93,7 @@ minetest.register_node("ice_and_tea:greentea_bush", {
 })
 
 minetest.register_craftitem("ice_and_tea:crushedmatcha", {
-    description = S("crushed Matcha"),
+    description = S("Crushed Matcha"),
 	inventory_image = "CrushedgreenTea.png",
 })
 
