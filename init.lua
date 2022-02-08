@@ -137,50 +137,48 @@ minetest.register_craft({
 minetest.register_craftitem("ice_and_tea:cone", {
     description = S("Ice cream cone"),
 	inventory_image = "coneminetest.png",
-	on_use = minetest.item_eat(4),
+	on_use = minetest.item_eat(4, ""),
 })
 
 minetest.register_craftitem("ice_and_tea:icecreambanana", {
-    description = S("Ice cream cone"),
+    description = S("Banana Icecream"),
 	inventory_image = "Icecreambanana.png",
-	on_use = minetest.item_eat(6),
+	on_use = minetest.item_eat(6, ""),
 })
 
 minetest.register_craftitem("ice_and_tea:icecreamchocolate", {
-    description = S("Ice cream cone"),
+    description = S("Choco Icecream"),
 	inventory_image = "Icecreamchocolate.png",
-	on_use = minetest.item_eat(6),
+	on_use = minetest.item_eat(6, ""),
 })
 
 minetest.register_craftitem("ice_and_tea:icecreammatcha", {
-    description = S("Ice cream cone"),
+    description = S("Matcha Icecream"),
 	inventory_image = "Icecreammatcha.png",
-	on_use = minetest.item_eat(6),
+	on_use = minetest.item_eat(6, ""),
 })
 
 minetest.register_craftitem("ice_and_tea:icecreamstrawberry", {
-    description = S("Ice cream cone"),
+    description = S("Strawberry Icecream"),
 	inventory_image = "Icecreamstrawberry.png",
-	on_use = minetest.item_eat(6),
+	on_use = minetest.item_eat(6, ""),
 })
 
 minetest.register_craftitem("ice_and_tea:icecreamvanilla", {
-    description = S("Ice cream cone"),
+    description = S("Vanilla Icecream"),
 	inventory_image = "Icecreamvanilla.png",
-	on_use = minetest.item_eat(6),
+	on_use = minetest.item_eat(6, ""),
 })
 
 minetest.register_craft({
     output = "ice_and_tea:cone 4",
 	recipe = {
 	    {"","group:food_flour","mobs:egg"},
-	    {"group:food_sugar","group:food_milk",""},
+	    {"group:food_sugar","mobs:bucket_milk",""},
 	    {"","",""},
 	},
 	replacements = {
-	    {"","",""},
-		{"","bucket:bucket_empty",""},
-		{"","",""},
+		{"mobs:bucket_milk","bucket:bucket_empty"},
 	},
 })
 
@@ -246,7 +244,7 @@ minetest.register_craft({
 })
 
 minetest.register_node("ice_and_tea:icecreambanana", {
-    description = S("Tea Sapling"),
+    description = S("Banana Icecream"),
     drawtype = "plantlike",
     tiles = {"Icecreambanana.png"},
     inventory_image = "Icecreambanana.png",
@@ -260,10 +258,11 @@ minetest.register_node("ice_and_tea:icecreambanana", {
 	},
 	groups = {snappy = 2, dig_immediate = 3, flammable = 2,
        	attached_node = 1},
+	on_use = minetest.item_eat(6, ""),
 })
 
 minetest.register_node("ice_and_tea:icecreamchocolate", {
-    description = S("Tea Sapling"),
+    description = S("Choco Icecream"),
     drawtype = "plantlike",
     tiles = {"Icecreamchocolate.png"},
     inventory_image = "Icecreamchocolate.png",
@@ -277,9 +276,10 @@ minetest.register_node("ice_and_tea:icecreamchocolate", {
 	},
 	groups = {snappy = 2, dig_immediate = 3, flammable = 2,
        	attached_node = 1},
+	on_use = minetest.item_eat(6, ""),
 })
 minetest.register_node("ice_and_tea:icecreammatcha", {
-    description = S("Tea Sapling"),
+    description = S("Matcha Icecream"),
     drawtype = "plantlike",
     tiles = {"Icecreammatcha.png"},
     inventory_image = "Icecreammatcha.png",
@@ -293,10 +293,11 @@ minetest.register_node("ice_and_tea:icecreammatcha", {
 	},
 	groups = {snappy = 2, dig_immediate = 3, flammable = 2,
        	attached_node = 1},
+	on_use = minetest.item_eat(6, ""),
 })
 
 minetest.register_node("ice_and_tea:icecreamstrawberry", {
-    description = S("Tea Sapling"),
+    description = S("Strawberry Icecream"),
     drawtype = "plantlike",
     tiles = {"Icecreamstrawberry.png"},
     inventory_image = "Icecreamstrawberry.png",
@@ -310,10 +311,11 @@ minetest.register_node("ice_and_tea:icecreamstrawberry", {
 	},
 	groups = {snappy = 2, dig_immediate = 3, flammable = 2,
        	attached_node = 1},
+	on_use = minetest.item_eat(6, ""),
 })
 
 minetest.register_node("ice_and_tea:icecreamvanilla", {
-    description = S("Tea Sapling"),
+    description = S("Vanilla Icecream"),
     drawtype = "plantlike",
     tiles = {"Icecreamvanilla.png"},
     inventory_image = "Icecreamvanilla.png",
@@ -327,4 +329,14 @@ minetest.register_node("ice_and_tea:icecreamvanilla", {
 	},
 	groups = {snappy = 2, dig_immediate = 3, flammable = 2,
        	attached_node = 1},
+	on_use = minetest.item_eat(6, ""),
 })
+
+if minetest.​get_modpath​(​"​bonemeal​"​) ​~=​ ​nil​ ​then 
+ ​        bonemeal:​add_sapling​({ 
+ ​                {​"​ice_and_tea:tea_sapling", grow_new_tea, "grass"}, 
+ ​        {​"​ice_and_tea:tea_sapling"​, grow_new_tea, ​"​soil​"},​
+ ​    })
+end,
+	
+	
