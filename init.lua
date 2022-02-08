@@ -14,7 +14,7 @@ if not default.can_grow(pos) then
 		return
 	end
 	minetest.remove_node(pos)
-	minetest.place_schematic({x = pos.x-1, y = pos.y, z = pos.z-1}, modpath.."tea.mts", "0", nil, false)
+	minetest.place_schematic({x = pos.x-1, y = pos.y, z = pos.z-1}, modpath.."/schematics/tea.mts", "0", nil, false)
 end
 
 minetest.register_decoration({
@@ -33,7 +33,7 @@ minetest.register_decoration({
 	biomes = {"deciduous_forest"},
 	y_min = 1,
 	y_max = 20,
-	schematic = modpath.."tea.mts",
+	schematic = modpath.."/schematics/tea.mts",
 	flags = "place_center_x, place_center_z, force_placement",
 	rotation = "random",
 })
