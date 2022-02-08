@@ -334,7 +334,7 @@ minetest.register_node("ice_and_tea:icecreamvanilla", {
 
 if minetest.get_modpath("bonemeal") ~= nil then
     bonemeal:add_sapling({
-	     {"ice_and_tea:tea_sapling", grow_new_tea, "grass"},
+	     {"ice_and_tea:tea_sapling", grow_new_tea, "default:dirt_with_grass"},
 	})
 end
 	
