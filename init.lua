@@ -14,7 +14,7 @@ if not default.can_grow(pos) then
 		return
 	end
 	minetest.remove_node(pos)
-	minetest.place_schematic({x = 1, y = 0, z = -1}, modpath.."/schematics/tea.mts", "0", nil, false)
+	minetest.place_schematic({x = pos.x-1, y = pos.y, z = pos.z-1}, modpath.."/schematics/tea.mts", "0", nil, false)
 end
 
 minetest.register_decoration({
