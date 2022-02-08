@@ -84,7 +84,7 @@ minetest.register_node("ice_and_tea:greentea_bush", {
 	drop = {
 		max_items = 1,
 		items = {
-			{items = {"ice_and_tea:tea_sapling"}, rarity = 20},
+			{items = {"ice_and_tea:tea_sapling"}, rarity = 5},
 			{items = {"ice_and_tea:matchaleaves 2"}},
 		}
 	},
