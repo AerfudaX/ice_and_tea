@@ -332,11 +332,10 @@ minetest.register_node("ice_and_tea:icecreamvanilla", {
 	on_use = minetest.item_eat(6, ""),
 })
 
-if minetest.​get_modpath​(​"​bonemeal​"​) ​~=​ ​nil​ ​then 
- ​        bonemeal:​add_sapling​({ 
- ​                {​"​ice_and_tea:tea_sapling", grow_new_tea, "grass"}, 
- ​        {​"​ice_and_tea:tea_sapling"​, grow_new_tea, ​"​soil​"},​
- ​    })
-end,
+if minetest.get_modpath("bonemeal") ~= nil then
+    bonemeal:add_sapling({
+	     {"ice_and_tea:tea_sapling", grow_new_tea, "grass"},
+	})
+end
 	
 	
