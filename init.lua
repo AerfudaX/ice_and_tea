@@ -337,5 +337,3 @@ if minetest.get_modpath("bonemeal") ~= nil then
 	     {"ice_and_tea:tea_sapling", grow_new_tea, "default:dirt_with_grass"},
 	})
 end
-	
-	
