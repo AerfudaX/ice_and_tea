@@ -244,3 +244,87 @@ minetest.register_craft({
 		{"default:ice", "default:ice"},
 	},
 })
+
+minetest.register_node("ice_and_tea:icecreambanana", {
+    description = S("Tea Sapling"),
+    drawtype = "plantlike",
+    tiles = {"Icecreambanana.png"},
+    inventory_image = "Icecreambanana.png",
+    wield_image = "Icecreambanana.png",
+    paramtype = "light",
+    sunlight_propagates = true,
+    walkable = false,
+	selection_box = {
+	   type = "fixed",
+	   fixed = {-4 / 16, -0.5, -4 / 16, 4 / 16, 7 / 16, 4 / 16},
+	},
+	groups = {snappy = 2, dig_immediate = 3, flammable = 2,
+       	attached_node = 1},
+})
+
+minetest.register_node("ice_and_tea:icecreamchocolate", {
+    description = S("Tea Sapling"),
+    drawtype = "plantlike",
+    tiles = {"Icecreamchocolate.png"},
+    inventory_image = "Icecreamchocolate.png",
+    wield_image = "Icecreamchocolate.png",
+    paramtype = "light",
+    sunlight_propagates = true,
+    walkable = false,
+	selection_box = {
+	   type = "fixed",
+	   fixed = {-4 / 16, -0.5, -4 / 16, 4 / 16, 7 / 16, 4 / 16},
+	},
+	groups = {snappy = 2, dig_immediate = 3, flammable = 2,
+       	attached_node = 1},
+})
+minetest.register_node("ice_and_tea:icecreammatcha", {
+    description = S("Tea Sapling"),
+    drawtype = "plantlike",
+    tiles = {"Icecreammatcha.png"},
+    inventory_image = "Icecreammatcha.png",
+    wield_image = "Icecreammatcha.png",
+    paramtype = "light",
+    sunlight_propagates = true,
+    walkable = false,
+	selection_box = {
+	   type = "fixed",
+	   fixed = {-4 / 16, -0.5, -4 / 16, 4 / 16, 7 / 16, 4 / 16},
+	},
+	groups = {snappy = 2, dig_immediate = 3, flammable = 2,
+       	attached_node = 1},
+})
+
+minetest.register_node("ice_and_tea:icecreamstrawberry", {
+    description = S("Tea Sapling"),
+    drawtype = "plantlike",
+    tiles = {"Icecreamstrawberry.png"},
+    inventory_image = "Icecreamstrawberry.png",
+    wield_image = "Icecreamstrawberry.png",
+    paramtype = "light",
+    sunlight_propagates = true,
+    walkable = false,
+	selection_box = {
+	   type = "fixed",
+	   fixed = {-4 / 16, -0.5, -4 / 16, 4 / 16, 7 / 16, 4 / 16},
+	},
+	groups = {snappy = 2, dig_immediate = 3, flammable = 2,
+       	attached_node = 1},
+})
+
+minetest.register_node("ice_and_tea:icecreamvanilla", {
+    description = S("Tea Sapling"),
+    drawtype = "plantlike",
+    tiles = {"Icecreamvanilla.png"},
+    inventory_image = "Icecreamvanilla.png",
+    wield_image = "Icecreamvanilla.png",
+    paramtype = "light",
+    sunlight_propagates = true,
+    walkable = false,
+	selection_box = {
+	   type = "fixed",
+	   fixed = {-4 / 16, -0.5, -4 / 16, 4 / 16, 7 / 16, 4 / 16},
+	},
+	groups = {snappy = 2, dig_immediate = 3, flammable = 2,
+       	attached_node = 1},
+})
