@@ -25,7 +25,7 @@ minetest.register_decoration({
 	noise_params = {
 		offset = 0.001,
 		scale = 0.002,
-		spread = {x = 250, y = 250, z = 250},
+		spread = {x = 200, y = 200, z = 200},
 		seed = 3462,
 		octaves = 3,
 		persist = 0.66
@@ -34,7 +34,7 @@ minetest.register_decoration({
 	y_min = 1,
 	y_max = 20,
 	schematic = modpath.."/schematics/tea.mts",
-	flags = "place_center_x, place_center_z",
+	flags = "place_center_x, place_center_z, force_placement",
 	rotation = "random",
 })
 
