@@ -34,7 +34,7 @@ minetest.register_decoration({
 	y_min = 1,
 	y_max = 20,
 	schematic = modpath.."/schematics/tea.mts",
-	flags = "place_center_x, place_center_z, force_placement",
+	flags = "place_center_x, place_center_z",
 	rotation = "random",
 })
 
