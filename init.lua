@@ -134,42 +134,6 @@ minetest.register_craft({
 
 -- Ice Creams
 
-minetest.register_craftitem("ice_and_tea:cone", {
-    description = S("Ice cream cone"),
-	inventory_image = "coneminetest.png",
-	on_use = minetest.item_eat(4, ""),
-})
-
-minetest.register_craftitem("ice_and_tea:icecreambanana", {
-    description = S("Banana Icecream"),
-	inventory_image = "Icecreambanana.png",
-	on_use = minetest.item_eat(6, ""),
-})
-
-minetest.register_craftitem("ice_and_tea:icecreamchocolate", {
-    description = S("Choco Icecream"),
-	inventory_image = "Icecreamchocolate.png",
-	on_use = minetest.item_eat(6, ""),
-})
-
-minetest.register_craftitem("ice_and_tea:icecreammatcha", {
-    description = S("Matcha Icecream"),
-	inventory_image = "Icecreammatcha.png",
-	on_use = minetest.item_eat(6, ""),
-})
-
-minetest.register_craftitem("ice_and_tea:icecreamstrawberry", {
-    description = S("Strawberry Icecream"),
-	inventory_image = "Icecreamstrawberry.png",
-	on_use = minetest.item_eat(6, ""),
-})
-
-minetest.register_craftitem("ice_and_tea:icecreamvanilla", {
-    description = S("Vanilla Icecream"),
-	inventory_image = "Icecreamvanilla.png",
-	on_use = minetest.item_eat(6, ""),
-})
-
 minetest.register_craft({
     output = "ice_and_tea:cone 4",
 	recipe = {
@@ -243,15 +207,70 @@ minetest.register_craft({
 	},
 })
 
+minetest.register_node("ice_and_tea:cone", {
+    description = S("Ice Cream Cone"),
+    tiles = {"blanktexture.png^[colorize:#b97a57","(blanktexture.png^[colorize:#b97a57)^(edgeblanktexture.png^[colorize:#b97a57)","coneminetest.png"},
+    walkable = false,
+	drawtype = "nodebox",
+	paramtype = "light",
+	buildable = false,
+	node_box = {
+		type = "fixed",
+		fixed = {
+			{-0.0625, -0.5, -0.0625, 0.0625, -0.4375, 0.0625},
+			
+			{-0.125, -0.4375, -0.125, 0.125, -0.3125, 0.125},
+			
+			{-0.1875, -0.3125, -0.1875, -0.0625, -0.1875, 0.1875},
+			{0.1875, -0.3125, -0.1875, 0.0625, -0.1875, 0.1875},
+			{-0.1875, -0.3125, -0.1875, 0.1875, -0.1875, -0.0625},
+			{0.1875, -0.3125, 0.1875, -0.1875, -0.1875, 0.0625},
+			
+			{-0.25, -0.1875, -0.25, -0.125, -0.0625, 0.25},
+			{0.25, -0.1875, 0.25, 0.125, -0.0625, -0.25},
+			{-0.25, -0.1875, -0.125, 0.25, -0.0625, -0.25},
+			{0.25, -0.1875, 0.125, -0.25, -0.0625, 0.25},
+			
+			{-0.3125, -0.0625, -0.3125, -0.1875, 0.125, 0.3125},
+			{0.3125, -0.0625, -0.3125, 0.1875, 0.125, 0.3125},
+			{-0.3125, -0.0625, -0.1875, 0.3125, 0.125, -0.3125},
+			{0.3125, -0.0625, 0.1875, -0.3125, 0.125, 0.3125},
+		},
+	},
+	paramtype2 = "facedir",
+	selection_box = {
+	   type = "fixed",
+	   fixed = {-4 / 16, -0.5, -4 / 16, 4 / 16, 7 / 16, 4 / 16},
+	},
+	groups = {snappy = 2, dig_immediate = 3, flammable = 2,
+       	attached_node = 1},
+	on_use = minetest.item_eat(2, ""),
+})
+
 minetest.register_node("ice_and_tea:icecreambanana", {
     description = S("Banana Icecream"),
-    drawtype = "plantlike",
-    tiles = {"Icecreambanana.png"},
-    inventory_image = "Icecreambanana.png",
-    wield_image = "Icecreambanana.png",
-    paramtype = "light",
-    sunlight_propagates = true,
+	tiles = { "blanktexture.png^[colorize:#f4fc70","(blanktexture.png^[colorize:#b97a57)^(edgeblanktexture.png^[colorize:#f4fc70)","Icecreambanana.png"},
     walkable = false,
+	drawtype = "nodebox",
+	paramtype = "light",
+	buildable = false,
+	node_box = {
+		type = "fixed",
+		fixed = {
+			{-0.0625, -0.5, -0.0625, 0.0625, -0.4375, 0.0625},
+			{-0.125, -0.4375, -0.125, 0.125, -0.3125, 0.125},
+			{-0.1875, -0.3125, -0.1875, 0.1875, -0.1875, 0.1875},
+			{-0.25, -0.1875, -0.25, 0.25, -0.0625, 0.25},
+			{-0.3125, -0.0625, -0.3125, 0.3125, 0.125, 0.3125},
+			
+			{-0.375, 0.125, -0.375, 0.375, 0.1875, 0.375},
+			{-0.4375, 0.1875, -0.4375, 0.4375, 0.3125, 0.4375},
+			{-0.375, 0.3125, -0.375, 0.375, 0.375, 0.375},
+			{-0.3125, 0.375, -0.3125, 0.3125, 0.4375, 0.3125},
+			{-0.1875, 0.4375, -0.1875, 0.1875, 0.5, 0.1875},
+		},
+	},
+	paramtype2 = "facedir",
 	selection_box = {
 	   type = "fixed",
 	   fixed = {-4 / 16, -0.5, -4 / 16, 4 / 16, 7 / 16, 4 / 16},
@@ -263,13 +282,28 @@ minetest.register_node("ice_and_tea:icecreambanana", {
 
 minetest.register_node("ice_and_tea:icecreamchocolate", {
     description = S("Choco Icecream"),
-    drawtype = "plantlike",
-    tiles = {"Icecreamchocolate.png"},
-    inventory_image = "Icecreamchocolate.png",
-    wield_image = "Icecreamchocolate.png",
-    paramtype = "light",
-    sunlight_propagates = true,
+    tiles = {"blanktexture.png^[colorize:#623d28","(blanktexture.png^[colorize:#b97a57)^(edgeblanktexture.png^[colorize:#623d28)","Icecreamchocolate.png"},
     walkable = false,
+	drawtype = "nodebox",
+	paramtype = "light",
+	buildable = false,
+	node_box = {
+		type = "fixed",
+		fixed = {
+			{-0.0625, -0.5, -0.0625, 0.0625, -0.4375, 0.0625},
+			{-0.125, -0.4375, -0.125, 0.125, -0.3125, 0.125},
+			{-0.1875, -0.3125, -0.1875, 0.1875, -0.1875, 0.1875},
+			{-0.25, -0.1875, -0.25, 0.25, -0.0625, 0.25},
+			{-0.3125, -0.0625, -0.3125, 0.3125, 0.125, 0.3125},
+			
+			{-0.375, 0.125, -0.375, 0.375, 0.1875, 0.375},
+			{-0.4375, 0.1875, -0.4375, 0.4375, 0.3125, 0.4375},
+			{-0.375, 0.3125, -0.375, 0.375, 0.375, 0.375},
+			{-0.3125, 0.375, -0.3125, 0.3125, 0.4375, 0.3125},
+			{-0.1875, 0.4375, -0.1875, 0.1875, 0.5, 0.1875},
+		},
+	},
+	paramtype2 = "facedir",
 	selection_box = {
 	   type = "fixed",
 	   fixed = {-4 / 16, -0.5, -4 / 16, 4 / 16, 7 / 16, 4 / 16},
@@ -280,13 +314,28 @@ minetest.register_node("ice_and_tea:icecreamchocolate", {
 })
 minetest.register_node("ice_and_tea:icecreammatcha", {
     description = S("Matcha Icecream"),
-    drawtype = "plantlike",
-    tiles = {"Icecreammatcha.png"},
-    inventory_image = "Icecreammatcha.png",
-    wield_image = "Icecreammatcha.png",
-    paramtype = "light",
-    sunlight_propagates = true,
+    tiles = {"blanktexture.png^[colorize:#a0ce17","(blanktexture.png^[colorize:#b97a57)^(edgeblanktexture.png^[colorize:#a0ce17)","Icecreammatcha.png"},
     walkable = false,
+	drawtype = "nodebox",
+	paramtype = "light",
+	buildable = false,
+	node_box = {
+		type = "fixed",
+		fixed = {
+			{-0.0625, -0.5, -0.0625, 0.0625, -0.4375, 0.0625},
+			{-0.125, -0.4375, -0.125, 0.125, -0.3125, 0.125},
+			{-0.1875, -0.3125, -0.1875, 0.1875, -0.1875, 0.1875},
+			{-0.25, -0.1875, -0.25, 0.25, -0.0625, 0.25},
+			{-0.3125, -0.0625, -0.3125, 0.3125, 0.125, 0.3125},
+			
+			{-0.375, 0.125, -0.375, 0.375, 0.1875, 0.375},
+			{-0.4375, 0.1875, -0.4375, 0.4375, 0.3125, 0.4375},
+			{-0.375, 0.3125, -0.375, 0.375, 0.375, 0.375},
+			{-0.3125, 0.375, -0.3125, 0.3125, 0.4375, 0.3125},
+			{-0.1875, 0.4375, -0.1875, 0.1875, 0.5, 0.1875},
+		},
+	},
+	paramtype2 = "facedir",
 	selection_box = {
 	   type = "fixed",
 	   fixed = {-4 / 16, -0.5, -4 / 16, 4 / 16, 7 / 16, 4 / 16},
@@ -298,13 +347,28 @@ minetest.register_node("ice_and_tea:icecreammatcha", {
 
 minetest.register_node("ice_and_tea:icecreamstrawberry", {
     description = S("Strawberry Icecream"),
-    drawtype = "plantlike",
-    tiles = {"Icecreamstrawberry.png"},
-    inventory_image = "Icecreamstrawberry.png",
-    wield_image = "Icecreamstrawberry.png",
-    paramtype = "light",
-    sunlight_propagates = true,
+    tiles = {"blanktexture.png^[colorize:#f9b6ab","(blanktexture.png^[colorize:#b97a57)^(edgeblanktexture.png^[colorize:#f9b6ab)","Icecreamstrawberry.png"},
     walkable = false,
+	drawtype = "nodebox",
+	paramtype = "light",
+	buildable = false,
+	node_box = {
+		type = "fixed",
+		fixed = {
+			{-0.0625, -0.5, -0.0625, 0.0625, -0.4375, 0.0625},
+			{-0.125, -0.4375, -0.125, 0.125, -0.3125, 0.125},
+			{-0.1875, -0.3125, -0.1875, 0.1875, -0.1875, 0.1875},
+			{-0.25, -0.1875, -0.25, 0.25, -0.0625, 0.25},
+			{-0.3125, -0.0625, -0.3125, 0.3125, 0.125, 0.3125},
+			
+			{-0.375, 0.125, -0.375, 0.375, 0.1875, 0.375},
+			{-0.4375, 0.1875, -0.4375, 0.4375, 0.3125, 0.4375},
+			{-0.375, 0.3125, -0.375, 0.375, 0.375, 0.375},
+			{-0.3125, 0.375, -0.3125, 0.3125, 0.4375, 0.3125},
+			{-0.1875, 0.4375, -0.1875, 0.1875, 0.5, 0.1875},
+		},
+	},
+	paramtype2 = "facedir",
 	selection_box = {
 	   type = "fixed",
 	   fixed = {-4 / 16, -0.5, -4 / 16, 4 / 16, 7 / 16, 4 / 16},
@@ -316,13 +380,28 @@ minetest.register_node("ice_and_tea:icecreamstrawberry", {
 
 minetest.register_node("ice_and_tea:icecreamvanilla", {
     description = S("Vanilla Icecream"),
-    drawtype = "plantlike",
-    tiles = {"Icecreamvanilla.png"},
-    inventory_image = "Icecreamvanilla.png",
-    wield_image = "Icecreamvanilla.png",
-    paramtype = "light",
-    sunlight_propagates = true,
-    walkable = false,
+    tiles = {"blanktexture.png^[colorize:#f4ecc6","(blanktexture.png^[colorize:#b97a57)^(edgeblanktexture.png^[colorize:#f4ecc6)","Icecreamvanilla.png"},
+	walkable = false,
+	drawtype = "nodebox",
+	paramtype = "light",
+	buildable = false,
+	node_box = {
+		type = "fixed",
+		fixed = {
+			{-0.0625, -0.5, -0.0625, 0.0625, -0.4375, 0.0625},
+			{-0.125, -0.4375, -0.125, 0.125, -0.3125, 0.125},
+			{-0.1875, -0.3125, -0.1875, 0.1875, -0.1875, 0.1875},
+			{-0.25, -0.1875, -0.25, 0.25, -0.0625, 0.25},
+			{-0.3125, -0.0625, -0.3125, 0.3125, 0.125, 0.3125},
+			
+			{-0.375, 0.125, -0.375, 0.375, 0.1875, 0.375},
+			{-0.4375, 0.1875, -0.4375, 0.4375, 0.3125, 0.4375},
+			{-0.375, 0.3125, -0.375, 0.375, 0.375, 0.375},
+			{-0.3125, 0.375, -0.3125, 0.3125, 0.4375, 0.3125},
+			{-0.1875, 0.4375, -0.1875, 0.1875, 0.5, 0.1875},
+		},
+	},
+	paramtype2 = "facedir",
 	selection_box = {
 	   type = "fixed",
 	   fixed = {-4 / 16, -0.5, -4 / 16, 4 / 16, 7 / 16, 4 / 16},
